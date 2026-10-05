@@ -1,0 +1,250 @@
+﻿<Window x:Class="Practica1Videojuegos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="GameZone - Portal de Videojuegos"
+        Height="650"
+        Width="1000"
+        Background="#F2F2F2">
+
+    <Window.Resources>
+
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style x:Key="Tarjeta" TargetType="Border">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="280"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="#F7F7F7"/>
+            <Setter Property="CornerRadius" Value="8"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="25">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- PERFIL -->
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                Background="#252525"
+                Padding="12"
+                HorizontalAlignment="Right"
+                CornerRadius="8">
+
+            <TextBlock Text="Mi perfil"
+                       Foreground="White"
+                       FontWeight="Bold"/>
+
+        </Border>
+
+
+        <!-- MENU SUPERIOR -->
+        <Border Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Background="#252525"
+                Padding="8"
+                Margin="0,12,0,15"
+                CornerRadius="8">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+
+                <Button Content="INICIO"
+                        Width="100"/>
+
+                <Button Content="TIENDA"
+                        Width="100"/>
+
+                <Button Content="COMUNIDAD"
+                        Width="110"/>
+
+                <Button Content="SOPORTE"
+                        Width="100"/>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <!-- MENU LATERAL -->
+        <Border Grid.Row="2"
+                Grid.Column="0"
+                Background="#252525"
+                CornerRadius="12"
+                Padding="15"
+                Margin="0,0,15,0">
+
+            <StackPanel>
+
+                <TextBlock Text="GAMEZONE"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5,5,5,25"/>
+
+                <TextBlock Text="NAVEGACIÓN"
+                           Foreground="#AAAAAA"
+                           FontSize="11"
+                           FontWeight="Bold"/>
+
+                <Button Content="Destacados"/>
+                <Button Content="Mis juegos"/>
+                <Button Content="Configuración"/>
+
+                <TextBlock Text="CATEGORÍAS"
+                           Foreground="#AAAAAA"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Margin="5,25,5,5"/>
+
+                <Button Content="Acción"/>
+                <Button Content="Deportes"/>
+                <Button Content="Terror"/>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <Border Grid.Row="2"
+                Grid.Column="1"
+                Background="White"
+                CornerRadius="12"
+                Padding="20">
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                <StackPanel>
+
+                    <TextBlock Text="Juegos destacados"
+                               FontSize="26"
+                               FontWeight="Bold"/>
+
+                    <TextBlock Text="Descubre los juegos más populares del momento"
+                               Foreground="Gray"
+                               Margin="0,5,0,20"/>
+
+
+                    <!-- TARJETAS DE JUEGOS -->
+                    <WrapPanel>
+
+
+                        <!-- GTA VI -->
+                        <Border Style="{StaticResource Tarjeta}">
+
+                            <StackPanel>
+
+                                <Image Source="/Imagenes/gta6.jpg"
+                                       Height="140"
+                                       Stretch="UniformToFill"/>
+
+                                <TextBlock Text="GTA VI"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Margin="0,10,0,2"/>
+
+                                <TextBlock Text="Acción · Mundo abierto"
+                                           Foreground="Gray"/>
+
+                                <TextBlock Text="★★★★★"
+                                           Foreground="#E5A900"
+                                           Margin="0,7,0,0"/>
+
+                                <Button Content="Ver juego"
+                                        Width="90"
+                                        HorizontalAlignment="Left"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+
+                        <!-- FC 27 -->
+                        <Border Style="{StaticResource Tarjeta}">
+
+                            <StackPanel>
+
+                                <Image Source="/Imagenes/fc27.jpg"
+                                       Height="140"
+                                       Stretch="UniformToFill"/>
+
+                                <TextBlock Text="FC 27"
+                                           FontSize="18"
+                                           FontWeight="Bold"
+                                           Margin="0,10,0,2"/>
+
+                                <TextBlock Text="Deportes · Fútbol"
+                                           Foreground="Gray"/>
+
+                                <TextBlock Text="★★★★☆"
+                                           Foreground="#E5A900"
+                                           Margin="0,7,0,0"/>
+
+                                <Button Content="Ver juego"
+                                        Width="90"
+                                        HorizontalAlignment="Left"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+
+                        <!-- FNAF -->
+                        <Border Style="{StaticResource Tarjeta}">
+
+                            <StackPanel>
+
+                                <Image Source="/Imagenes/fnaf.jpg"
+                                       Height="140"
+                                       Stretch="UniformToFill"/>
+
+                                <TextBlock Text="FNAF: Security Breach"
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Margin="0,10,0,2"/>
+
+                                <TextBlock Text="Terror · Supervivencia"
+                                           Foreground="Gray"/>
+
+                                <TextBlock Text="★★★★☆"
+                                           Foreground="#E5A900"
+                                           Margin="0,7,0,0"/>
+
+                                <Button Content="Ver juego"
+                                        Width="90"
+                                        HorizontalAlignment="Left"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+
+                    </WrapPanel>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Border>
+
+    </Grid>
+
+</Window>
